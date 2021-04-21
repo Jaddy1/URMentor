@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}UR Mentor{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>UR Mentor</h1>
+    <a class="btn btn-outline-danger btn-lg" href="/register">Sign Up Today</a>
+    <a class="btn btn-outline-secondary btn-lg" href="/login">Sign In</a>
+  </body>
+</html>
+{% endblock %}

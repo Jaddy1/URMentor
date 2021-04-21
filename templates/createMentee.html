@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Create Profile{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Create Profile</h1>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Major
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Major 1</a>
+        <a class="dropdown-item" href="#">Major 2</a>
+        <a class="dropdown-item" href="#">Major 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Year
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Year 1</a>
+        <a class="dropdown-item" href="#">Year 2</a>
+        <a class="dropdown-item" href="#">Year 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Location
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Location 1</a>
+        <a class="dropdown-item" href="#">Location 2</a>
+        <a class="dropdown-item" href="#">Location 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Availability
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Availability 1</a>
+        <a class="dropdown-item" href="#">Availability 2</a>
+        <a class="dropdown-item" href="#">Availability 3</a>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

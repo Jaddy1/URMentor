@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Welcome,</h1>
+    <h2>Name!</h2>
+
+    <p>Select whether you are a mentor or a mentee!</p>
+    <p>(This can be changed later.)</p>
+
+    <a class="btn btn-outline-secondary btn-lg" href="/register">Mentor</a>
+    <a class="btn btn-outline-secondary btn-lg" href="/login">Mentee</a>
+  </body>
+</html>
+{% endblock %}

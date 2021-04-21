@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Registration</h1>
+
+    <form class="form" method="">
+      <h1></h1>
+      <label for="inputNetID">NetID:</label>
+      <input type="text" name="inputNetID" placeholer="NetID">
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" placeholer="First Name">
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" placeholer="Last Name">
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholer="Password">
+      <button class="btn btn-lg btn-primary btn-block submitbtn" type="submit" style="background-color: #007bff;">Sign Up</button>
+    </form>
+  </body>
+</html>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+  </body>
+</html> -->
