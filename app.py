@@ -24,6 +24,42 @@ def login():
 def welcome():
     return render_template("welcome.html")
 
-@app.route('/createMentee')
-def createMentee():
-    return render_template("createMentee.html")
+@app.route('/createMentee1')
+def createMentee1():
+    return render_template("createMentee1.html")
+
+@app.route('/createMentee2')
+def createMentee2():
+    return render_template("createMentee2.html")
+
+@app.route('/createMentor1')
+def createMentor1():
+    return render_template("createMentor1.html")
+
+@app.route('/createMentor2')
+def createMentor2():
+    return render_template("createMentor2.html")
+
+@app.route('/createMentor3')
+def createMentee3():
+    return render_template("createMentor3.html")
+
+@app.route('/menteeMain')
+def menteeMain():
+    return render_template("menteeMain.html")
+
+@app.route('/mentorMain')
+def mentorMain():
+    return render_template("mentorMain.html")
+
+@app.route('/findMatch')
+def findMatch():
+    return render_template("findMath.html")
+
+@app.route('/matchResult')
+def matchResult():
+    return render_template("matchResult.html")
+
+@app.route('/settings')
+def settings():
+    return render_template("settings.html")

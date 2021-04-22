@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Create Profile{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Create Profile</h1>
+
+    <form class="form" action="index.html" method="post">
+      <div class="dropdown">
+        <label for="major">Major:</label>
+        <select id="major" name="major">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Major 1">Major 1</option>
+            <option class="dropdown-item" value="Major 2">Major 2</option>
+            <option class="dropdown-item" value="Major 3">Major 3</option>
+          </div>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
+      </div>
+    </form>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Year
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Year 1</a>
+        <a class="dropdown-item" href="#">Year 2</a>
+        <a class="dropdown-item" href="#">Year 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Location
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Location 1</a>
+        <a class="dropdown-item" href="#">Location 2</a>
+        <a class="dropdown-item" href="#">Location 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Availability
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Availability 1</a>
+        <a class="dropdown-item" href="#">Availability 2</a>
+        <a class="dropdown-item" href="#">Availability 3</a>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
