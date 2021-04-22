@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body>
+    <h1 class="text-center">Greetings User!</h1>
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col">
+          <h2>Some filler text</h2>
+        </div>
+
+        <div class="col">
+          <h3>Check new massages from your mentor!</h3>
+          <div class="card" style="width: 18rem;">
+            <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4>Message!</h4>
+              <p class="card-text">Random message that your mentor sent. Check it out!</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h5>Explore your network</h5>
+              <div class="card" style="width: 10rem;">
+                <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Mentor Name</h4>
+                  <button type="button" name="button">Connect!</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <h5>Help the Anonymous</h5>
+              <div class="card" style="width: 10rem;">
+                <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4>Mentor Name</h4>
+                  <button type="button" name="button">Connect!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
