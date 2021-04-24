@@ -1,20 +1,51 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
-# from flask_sqlalchemy import SQLAlchemy
+from flask_moment import Moment
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 # from flask_migrate import Migrate
 
 app = Flask(__name__)
 application = app
+# database_file = "sqlite:///{}".format(os.path.join(project_dir, "ontheWall.db"))
+
+app.config['SECRET_KEY'] = 'hard to guess string'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///urmentor.db'
+
+db = SQLAlchemy(app)
 
 bootstrap = Bootstrap(app)
+
+#Create db model
+class URMentor(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return '<Name %r>' % self.id
+
+
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template("register.html")
+    if request.method == "POST":
+        netID = request.form["inputNetID"]
+        new_name = URMentor(name=netID)
+        try:
+            db.session.add(new_name)
+            db.session.commit()
+            return redirect('/login')
+        except:
+            return "error adding user to db"
+    else:
+        return render_template("register.html")
 
 @app.route('/login')
 def login():
