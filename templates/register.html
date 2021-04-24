@@ -4,27 +4,44 @@
 
 {% block head %}
   {{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login_styles.css') }}">
 {% endblock %}
 
 {% block page_content %}
-  <body class="text-center">
+
+  <body class="text-center" style="max-width: 500px; margin-left: auto;
+  margin-right: auto;">
     <h1>Registration</h1>
 
     <form class="form" method="">
-      <h1></h1>
-      <label for="inputNetID">NetID:</label>
-      <input type="text" name="inputNetID" placeholer="NetID">
-      <label for="firstName">First Name:</label>
-      <input type="text" name="firstName" placeholer="First Name">
-      <label for="lastName">Last Name:</label>
-      <input type="text" name="lastName" placeholer="Last Name">
-      <label for="password">Password:</label>
-      <input type="password" name="password" placeholer="Password">
-      <label for="cPassword">Confirm Password:</label>
-      <input type="password" name="cPassword" placeholer="Confirm Password">
-      <button class="btn btn-lg btn-primary btn-block submitbtn" type="submit" style="background-color: #007bff;">Sign Up</button>
-    </form>
-  </body>
+
+
+        <div class="imgcontainer">
+          <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 150px;"></img>        
+        </div>
+
+        <div class="container">
+     
+       <input type="text" placeholder="NetID" name="inputNetID" required>
+
+       <input type="text" placeholder="First Name" name="firstName" required>
+
+       <input type="text" placeholder="Last Name" name="lastName" required>
+
+       <input type="password" placeholder="Password" name="psw" required>
+
+       <input type="password" placeholder="Re-enter Password" name="cPassword" required>
+      
+        <button class="btn btn-lg btn-primary submitbtn" type="submit" style="background-color: #003b71;">Log In</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+         
+          <span class="psw">Have an account? <a href="login">Login today!</a></span>
+           <!-- <button type="button" class="signupbtn">Signup</button> -->
+        </div>
+      </form>
+   </body>
 </html>
 {% endblock %}
 
