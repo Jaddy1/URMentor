@@ -14,8 +14,18 @@
     <p>Select whether you are a mentor or a mentee!</p>
     <p>(This can be changed later.)</p>
 
-    <a class="btn btn-outline-secondary btn-lg" href="/register">Mentor</a>
-    <a class="btn btn-outline-secondary btn-lg" href="/login">Mentee</a>
+    <form class="form" method="POST">
+      <div class="dropdown">
+        <label for="ment">Pick:</label>
+        <select id="ment" name="ment">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Mentor">Mentor</option>
+            <option class="dropdown-item" value="Mentee">Mentee</option>
+          </div>
+        </select>
+      </div>
+      <button class="btn btn-outline-secondary btn-lg" type="submit">Submit</button>
+    </form>
   </body>
 </html>
 {% endblock %}

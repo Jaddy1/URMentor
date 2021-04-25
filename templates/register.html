@@ -13,29 +13,16 @@
     <form class="form" method="POST">
       <h1></h1>
       <label for="inputNetID">NetID:</label>
-      <input type="text" name="inputNetID" placeholer="NetID">
-      <label for="firstName">First Name:</label>
-      <input type="text" name="firstName" placeholer="First Name">
-      <label for="lastName">Last Name:</label>
-      <input type="text" name="lastName" placeholer="Last Name">
+      <input type="text" name="inputNetID" placeholer="NetID" required>
+      <label for="email">Email:</label>
+      <input type="text" name="email" placeholer="Email" rquired>
+      <label for="fullName">Full Name:</label>
+      <input type="text" name="fullName" placeholer="Full Name">
       <label for="password">Password:</label>
-      <input type="password" name="password" placeholer="Password">
-      <label for="cPassword">Confirm Password:</label>
-      <input type="password" name="cPassword" placeholer="Confirm Password">
+      <input type="password" name="password" placeholer="Password" required>
       <button class="btn btn-lg btn-primary btn-block submitbtn" type="submit" style="background-color: #007bff;">Sign Up</button>
     </form>
-    <p>Alredy have an account? <a href="/login">Log In</a></p>
+    <p>Already have an account? <a href="/login">Log In</a></p>
   </body>
 </html>
 {% endblock %}
-
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Register</title>
-  </head>
-  <body>
-    <h1>Register</h1>
-  </body>
-</html> -->

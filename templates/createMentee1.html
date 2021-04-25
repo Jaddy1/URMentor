@@ -10,49 +10,53 @@
   <body class="text-center">
     <h1>Create Profile</h1>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Major
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Major 1</a>
-        <a class="dropdown-item" href="#">Major 2</a>
-        <a class="dropdown-item" href="#">Major 3</a>
+    <form class="form" method="POST">
+      <div class="dropdown">
+        <label for="major">Major:</label>
+        <select id="major" name="major">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Major 1">Major 1</option>
+            <option class="dropdown-item" value="Major 2">Major 2</option>
+            <option class="dropdown-item" value="Major 3">Major 3</option>
+          </div>
+        </select>
       </div>
-    </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Year
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Year 1</a>
-        <a class="dropdown-item" href="#">Year 2</a>
-        <a class="dropdown-item" href="#">Year 3</a>
+      <div class="dropdown">
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
       </div>
-    </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Location
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Location 1</a>
-        <a class="dropdown-item" href="#">Location 2</a>
-        <a class="dropdown-item" href="#">Location 3</a>
+      <div class="dropdown">
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
       </div>
-    </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Availability
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Availability 1</a>
-        <a class="dropdown-item" href="#">Availability 2</a>
-        <a class="dropdown-item" href="#">Availability 3</a>
+      <div class="dropdown">
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Availability 1">Availability 1</option>
+            <option class="dropdown-item" value="Availability 1">Availability 2</option>
+            <option class="dropdown-item" value="Availability 1">Availability 3</option>
+          </div>
+        </select>
       </div>
-    </div>
+
+      <input type="submit" name="submit">
+    </form>
   </body>
 </html>
 {% endblock %}
