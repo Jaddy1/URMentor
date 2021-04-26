@@ -4,55 +4,57 @@
 
 {% block head %}
   {{ super() }}
+<!--   <script src="{{url_for('static', filename='js/main.js') }}" data-turbolinks-track="reload"></script>
+ -->  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dropdown_styles.css') }}">
+
 {% endblock %}
 
 {% block page_content %}
-  <body class="text-center">
+  <body class="text-center" style="max-width: 500px; margin-left: auto;
+  margin-right: auto;">
     <h1>Create Profile</h1>
+    <hr>
+    <!-- MAJOR -->
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Major
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Major 1</a>
-        <a class="dropdown-item" href="#">Major 2</a>
-        <a class="dropdown-item" href="#">Major 3</a>
+    <form autocomplete="off" action="/action_page.php">
+      <div class="autocomplete" style="width:300px;">
+        <input id="myInput" type="text" name="myCountry" placeholder="Major">
       </div>
+      <!-- <input type="submit"> -->
+    </form>
+
+
+    <!-- YEAR -->
+    <p style="font-size: 16px;">My graduate year is...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2021</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2022</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2023</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2024</button></div>
     </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Year
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Year 1</a>
-        <a class="dropdown-item" href="#">Year 2</a>
-        <a class="dropdown-item" href="#">Year 3</a>
-      </div>
+    <!-- LOCATION -->
+    <p style="font-size: 16px;">I am located in...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">River Campus</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Eastman</button></div>
+      
     </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Location
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Location 1</a>
-        <a class="dropdown-item" href="#">Location 2</a>
-        <a class="dropdown-item" href="#">Location 3</a>
-      </div>
+    <!-- AVAILABILTY -->
+    <p style="font-size: 16px;">My availabilty is...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
     </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Availability
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Availability 1</a>
-        <a class="dropdown-item" href="#">Availability 2</a>
-        <a class="dropdown-item" href="#">Availability 3</a>
-      </div>
-    </div>
+    <!-- NEXT -->
+    <div class="p-2 bd-highlight"><button type="button" class="btn btn-success">Next</button></div>
+
+     <script src="/static/main.js" charset="utf-8"></script>
   </body>
 </html>
+
 {% endblock %}
