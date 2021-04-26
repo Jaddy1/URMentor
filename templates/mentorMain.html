@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Greetings {{ name }}!</h1>
+    <div class="row">
+      <div class="col">
+        <h3>User Name</h3>
+        <a href="/matchResult">+ Find Your Match</a>
+        <h4></h4>
+      </div>
+      <div class="col">
+        <h2>Filler</h2>
+      </div>
+      <div class="col">
+        <h2>Filler</h2>
+      </div>
+    </div>
+    <h4>Check </h4>
+
+  </body>
+</html>
+{% endblock %}

@@ -39,6 +39,7 @@ class User(UserMixin, db.Model):
     year = db.Column(db.String(50))
     location = db.Column(db.String(100))
     interestID = db.Column(db.Integer, db.ForeignKey('interest.id'))
+    mentorID = db.Column(db.Integer, unique=True)
     # phone = db.Column(db.)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -163,26 +164,32 @@ def createMentor2():
             user.year = year
             user.location = location
             db.session.commit()
-            return redirect('/createMentee2')
+            return redirect('/createMentor3')
         except:
             return "error adding user to db"
     else:
         return render_template("createMentor2.html")
 
-@app.route('/createMentor3')
+@app.route('/createMentor3', methods=['GET', 'POST'])
 @login_required
 def createMentee3():
+    if request.method == "POST":
+        return redirect('/mentorMain')
     return render_template("createMentor3.html")
 
 @app.route('/menteeMain')
 @login_required
 def menteeMain():
-    return render_template("menteeMain.html")
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
+    return render_template("menteeMain.html", name=user.fullName)
 
 @app.route('/mentorMain')
 @login_required
 def mentorMain():
-    return render_template("mentorMain.html")
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
+    return render_template("mentorMain.html", name=user.fullName)
 
 @app.route('/findMatch')
 @login_required
@@ -205,4 +212,4 @@ def settings():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('main.main'))
+    return redirect('/')
