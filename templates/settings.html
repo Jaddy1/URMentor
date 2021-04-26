@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}UR Mentor{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+  <body class="text-center">
+    <h1>Settings</h1>
+    <h4>Net ID: {{ netID }}</h4>
+    <h4>Major: Major, Major</h4>
+    <h4>Year: {{ year }}</h4>
+    <h4>Tags: tag, tag, tag, tag</h4>
+    <h4>Contact:</h4>
+    <label for="email">Email:</label>
+    <input type="text" name="email" value="{{email}}">
+    <label for="linkedIn">LinkedIn:</label>
+    <input type="text" name="linkedIn" value="LinkedIn">
+  </body>
+</html>
+{% endblock %}

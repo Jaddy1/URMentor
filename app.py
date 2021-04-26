@@ -38,6 +38,8 @@ class User(UserMixin, db.Model):
     major = db.Column(db.String(50))
     year = db.Column(db.String(50))
     location = db.Column(db.String(100))
+    interestID = db.Column(db.Integer, db.ForeignKey('interest.id'))
+    # phone = db.Column(db.)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def verify_password(self, password):
@@ -45,6 +47,11 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<Name %r>' % self.id
+
+class Interest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), unique = True)
+    users = db.relationship('User', backref='interest')
 
 @app.route('/')
 def index():
@@ -190,4 +197,12 @@ def matchResult():
 @app.route('/settings')
 @login_required
 def settings():
-    return render_template("settings.html")
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
+    return render_template("settings.html", netID=user.netID, year=user.year, email=user.email)
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.main'))
