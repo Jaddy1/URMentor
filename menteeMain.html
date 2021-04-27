@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+  {{ super() }}
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/choices.css') }}">
+{% endblock %}
+
+{% block page_content %}
+
+
+  <body style="padding-top: 100px;">
+
+    <div class="row">
+  <div class="column side">
+   
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p> -->
+    <div class="side-container" style="padding-right: 30px;">
+      <div class="row"> 
+
+
+            <div class="imgcontainer col-sm-6">
+              <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 100px;"></img>        
+            </div>
+
+            <div class="col-sm-6">
+
+               <p style="font-size: 24px;">username</p>
+              
+              <div class="d-flex flex-wrap">
+             
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">River Campus</button></div>
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Eastman</button></div>
+            </div>
+          </div>
+          </div>
+
+          <br>
+
+          <button type="button" class="btn btn-secondary btn-lg btn-block">Find Your Match!</button>
+
+          <br>
+
+          <p style="font-size: 24px;">My Network</p>
+          <br>
+         
+    
+              <div class="imgcontainer col-sm-6">
+                 <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>        
+              </div>
+
+
+              <div class=" col-sm-6">
+               <p style="font-size: 24px;">Name</p>
+            
+                <div class="p-2 bd-highlight">
+                  <button type="button" class="btn btn-outline-dark">My Mentor</button>
+               </div>
+
+              </div>
+
+
+    </div>
+  </div>
+  
+  <div class="column middle">
+
+    <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search Your Network" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">search</button>
+        
+    </div>
+
+    <br>
+
+        <div style="border: 1px solid none; padding: 10px; box-shadow: 4px 4px #d1d1d1;
+      ">
+          <h2 style="color: ">Create a post or ask a question</h2>
+          <input class="form-control form-control-lg" type="text" placeholder="Ask question here...">
+
+        </div>
+
+</div>
+
+
+  
+  <div class="column side" style="padding-left: 30px;" >
+    <h2>Explore Your Network</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>      
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Dominique Dorvil</a></h4> 
+        <p>Digital Media Studies Major</p> 
+      </div>
+    </div>
+
+     <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>      
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Avan Turkson</a></h4> 
+        <p>Digital Media Studies Major</p> 
+      </div>
+    </div>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>      
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Isaac Male</a></h4> 
+        <p>Digital Media Studies Major</p> 
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+  </body>
+</html>
+{% endblock %}
