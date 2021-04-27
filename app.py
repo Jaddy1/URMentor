@@ -33,13 +33,14 @@ class User(UserMixin, db.Model):
     netID = db.Column(db.String(200), unique=True, nullable=False)
     email = db.Column(db.String(100), unique = True, nullable=False)
     fullName = db.Column(db.String(100), nullable=False)
-    password_hash = db.Column(db.String(100))
+    password_hash = db.Column(db.String(100), nullable=False)
     mentor = db.Column(db.Boolean)
     major = db.Column(db.String(50))
     year = db.Column(db.String(50))
     location = db.Column(db.String(100))
-    interestID = db.Column(db.Integer, db.ForeignKey('interest.id'))
-    mentorID = db.Column(db.Integer, unique=True)
+    availability = db.Column(db.String(100))
+    interests = db.relationship('Interest', backref='user')
+    mentorships = db.relationship('Mentorship', baclref='user')
     # phone = db.Column(db.)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -52,7 +53,11 @@ class User(UserMixin, db.Model):
 class Interest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), unique = True)
-    users = db.relationship('User', backref='interest')
+    userID = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+class Mentorship(db.Model):
+    mentorID = db.Column(db.Integer, db.ForeignKey('user.id'))
+    menteeID = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 @app.route('/')
 def index():
@@ -97,10 +102,10 @@ def login():
 @app.route('/welcome', methods=['GET', 'POST'])
 @login_required
 def welcome():
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
     if request.method == 'POST':
         response = request.form.get('ment')
-        userId = current_user.id
-        user = User.query.filter_by(id=userId).first()
         if response == 'Mentor':
             user.mentor == True
             db.session.commit()
@@ -110,7 +115,12 @@ def welcome():
             db.session.commit()
             return redirect('/createMentee1')
     else:
-        return render_template("welcome.html")
+        if user.mentor == True:
+            return redirect('/mentorMain')
+        elif user.mentor == False:
+            return redirect('/menteeMain')
+        else:
+            return render_template("welcome.html")
 
 @app.route('/createMentee1', methods=['GET','POST'])
 @login_required
