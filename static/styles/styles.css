@@ -1,0 +1,22 @@
+body{
+    background-image: url(https://www.oak-academy.co.uk/wp-content/uploads/2018/05/h-home-learning-983x448.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 500px;
+    height: 100%;
+    padding: 50px 40px;
+    background-color: rgb(255,255,255,0.8);
+    border: 5px solid rgb(255, 255, 255);
+}
+
+section{
+    margin: 30px 0px;
+}
+
+#next{
+    font-size: large;
+    padding: 5px 10px;
+}
