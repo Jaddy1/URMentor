@@ -8,33 +8,44 @@
 
   {% block head %}
     {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
   {% endblock %}
 
 
   {% block page_content %}
     <body class="text-center">
       <h1>Create Profile</h1>
+      <hr>
       <h3>Select topics you are interested in: </h3>
 
-<div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Topic1">
-        <label class="form-check-label" for="Topic1">Dorm Life</label>
+    <section id = "interest">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Topic2">
-        <label class="form-check-label" for="Topic2">Choosing a major</label>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Topic3">
-        <label class="form-check-label" for="Topic3">Choosing classes</label>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Topic4">
-        <label class="form-check-label" for="Topic4">Greek Life</label>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
+    </section>
+
+    <div class="p-2 bd-highlight">
+      <a href="/mentorMain"><button id = "next" type="button" class="btn btn-success">Complete!</button></a>
+    </div>
       
 
-      
 
     </body>
   </html>

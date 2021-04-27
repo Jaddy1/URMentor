@@ -10,32 +10,45 @@
 {% block page_content %}
   <body class="text-center">
     <h1>Create Profile</h1>
+    <hr>
 
     <form class="" action="index.html" method="post">
-      <h3>I'm a:</h3>
-      <select id="education" name="education">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            I'm a
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="undergraduate">Undergraduate</option>
-            <option class="dropdown-item" value="graduate">Graduate</option>
-            <option class="dropdown-item" value="faculty">Faculty</option>
-            <option class="dropdown-item" value="alumni">Alumni</option>
-          </div>
-      </select>
+      <section id = "question1">
+        <h3>I'm a:</h3>
+        <select id="education" name="education">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              I'm a
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <option class="dropdown-item" value="undergraduate">Undergraduate</option>
+              <option class="dropdown-item" value="graduate">Graduate</option>
+              <option class="dropdown-item" value="faculty">Faculty</option>
+              <option class="dropdown-item" value="alumni">Alumni</option>
+            </div>
+        </select>
+      </section>
+      
+      <section id = "question2">
+        <h3>I have finished at least one semester at the University of Rochester</h3>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="true" value="true">
+          <label class="form-check-label" for="true">true</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="false" value="false">
+          <label class="form-check-label" for="false">false</label>
+        </div>
+      </section>
 
-      <h3>I have finished at least one semester at the University of Rochester</h3>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="true" value="true">
-        <label class="form-check-label" for="true">true</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="false" value="false">
-        <label class="form-check-label" for="false">false</label>
-      </div>
     </form>
+
+      <!-- NEXT -->
+  <div class="p-2 bd-highlight">
+
+    <a href="/createMentor2"><button id = "next" type="button" class="btn btn-success">Next</button></a>
+  </div>
+
   </body>
 </html>
 {% endblock %}
