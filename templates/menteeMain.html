@@ -5,18 +5,19 @@
 {% block head %}
   {{ super() }}
    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/choices.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainstyles.css') }}">
 {% endblock %}
+
 
 {% block page_content %}
 
-
-  <body style="padding-top: 100px;">
+  <body style="padding-top: 20px;">
 
     <div class="row">
   <div class="column side">
    
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p> -->
-    <div class="side-container" style="padding-right: 30px;">
+    <div class="side-container">
       <div class="row"> 
 
 
@@ -27,11 +28,12 @@
             <div class="col-sm-6">
 
                <p style="font-size: 24px;">username</p>
-              
+
+               <p>My current role:</p>
               <div class="d-flex flex-wrap">
              
-              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">River Campus</button></div>
-              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Eastman</button></div>
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark active">Mentee</button></div>
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Mentor</button></div>
             </div>
           </div>
           </div>
@@ -86,7 +88,7 @@
 
 
   
-  <div class="column side" style="padding-left: 30px;" >
+  <div class="column side">
     <h2>Explore Your Network</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
 

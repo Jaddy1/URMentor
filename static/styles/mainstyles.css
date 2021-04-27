@@ -1,0 +1,8 @@
+.column.side{
+    border: 1px solid rgb(214, 202, 202);
+    padding: 10px 20px;
+}
+
+.column.middle{
+    padding: 10px 20px;
+}
