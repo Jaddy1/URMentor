@@ -16,6 +16,15 @@ section{
     margin: 30px 0px;
 }
 
+/* Index */
+#title>h1{
+    font-size: xx-large;
+}
+#title>p{
+    font-size: medium;
+}
+
+/* Create Profile */
 #next{
     font-size: large;
     padding: 5px 10px;

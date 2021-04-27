@@ -1,6 +1,14 @@
+body{
+  margin: 0;
+  background-image: url(https://www.oak-academy.co.uk/wp-content/uploads/2018/05/h-home-learning-983x448.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Bordered form */
 form {
   border: 3px solid #f1f1f1;
+  background-color: white;
 }
 
 /* Full-width inputs */
@@ -51,6 +59,7 @@ img.avatar {
 /* Add padding to containers */
 .container {
   padding: 16px;
+  background-color: rgb(255, 255, 255, 0.8);
 }
 
 /* The "Forgot password" text */
