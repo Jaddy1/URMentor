@@ -85,7 +85,7 @@ def mentorMain():
 
 @app.route('/findMatch')
 def findMatch():
-    return render_template("findMath.html")
+    return render_template("findMatch.html")
 
 @app.route('/matchResult')
 def matchResult():
