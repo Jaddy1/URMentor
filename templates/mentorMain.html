@@ -20,6 +20,11 @@
       </div>
       <div class="col">
         <h2>Filler</h2>
+        <ul>
+        {% for interest in interests %}
+          <li>{{ interest.title }}</li>
+        {% endfor %}
+        </ul>
       </div>
     </div>
     <h4>Check </h4>

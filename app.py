@@ -40,7 +40,7 @@ class User(UserMixin, db.Model):
     location = db.Column(db.String(100))
     availability = db.Column(db.String(100))
     interests = db.relationship('Interest', backref='user')
-    mentorships = db.relationship('Mentorship', baclref='user')
+    # mentorships = db.relationship('Mentorship', backref='user')
     # phone = db.Column(db.)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -52,12 +52,16 @@ class User(UserMixin, db.Model):
 
 class Interest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), unique = True)
+    title = db.Column(db.String(100))
     userID = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Mentorship(db.Model):
-    mentorID = db.Column(db.Integer, db.ForeignKey('user.id'))
-    menteeID = db.Column(db.Integer, db.ForeignKey('user.id'))
+    id = db.Column(db.Integer, primary_key=True)
+    mentorID = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    mentor = db.relationship("User", foreign_keys=[mentorID])
+    menteeID = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    # mentee = db.relationship("User", foreign_keys=[menteeID])
+    mentee = db.relationship("User", foreign_keys=[menteeID])
 
 @app.route('/')
 def index():
@@ -107,11 +111,11 @@ def welcome():
     if request.method == 'POST':
         response = request.form.get('ment')
         if response == 'Mentor':
-            user.mentor == True
+            user.mentor = True
             db.session.commit()
             return redirect('/createMentor1')
         else:
-            user.mentor == False
+            user.mentor = False
             db.session.commit()
             return redirect('/createMentee1')
     else:
@@ -142,10 +146,50 @@ def createMentee1():
     else:
         return render_template("createMentee1.html")
 
-@app.route('/createMentee2')
+@app.route('/createMentee2', methods=['GET', 'POST'])
 @login_required
 def createMentee2():
-    return render_template("createMentee2.html")
+    if request.method == "POST":
+        userId = current_user.id
+        if request.form.get("Topic1"):
+            new_interest = Interest(title=request.form.get("Topic1"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic2"):
+            new_interest = Interest(title=request.form.get("Topic2"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic3"):
+            new_interest = Interest(title=request.form.get("Topic3"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic4"):
+            new_interest = Interest(title=request.form.get("Topic4"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic5"):
+            new_interest = Interest(title=request.form.get("Topic5"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic6"):
+            new_interest = Interest(title=request.form.get("Topic6"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic7"):
+            new_interest = Interest(title=request.form.get("Topic7"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic8"):
+            new_interest = Interest(title=request.form.get("Topic8"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic9"):
+            new_interest = Interest(title=request.form.get("Topic9"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        return redirect('/menteeMain')
+    else:
+        return render_template("createMentee2.html")
 
 @app.route('/createMentor1', methods=['GET', 'POST'])
 @login_required
@@ -184,8 +228,46 @@ def createMentor2():
 @login_required
 def createMentee3():
     if request.method == "POST":
+        userId = current_user.id
+        if request.form.get("Topic1"):
+            new_interest = Interest(title=request.form.get("Topic1"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic2"):
+            new_interest = Interest(title=request.form.get("Topic2"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic3"):
+            new_interest = Interest(title=request.form.get("Topic3"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic4"):
+            new_interest = Interest(title=request.form.get("Topic4"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic5"):
+            new_interest = Interest(title=request.form.get("Topic5"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic6"):
+            new_interest = Interest(title=request.form.get("Topic6"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic7"):
+            new_interest = Interest(title=request.form.get("Topic7"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic8"):
+            new_interest = Interest(title=request.form.get("Topic8"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic9"):
+            new_interest = Interest(title=request.form.get("Topic9"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
         return redirect('/mentorMain')
-    return render_template("createMentor3.html")
+    else:
+        return render_template("createMentor3.html")
 
 @app.route('/menteeMain')
 @login_required
@@ -199,7 +281,9 @@ def menteeMain():
 def mentorMain():
     userId = current_user.id
     user = User.query.filter_by(id=userId).first()
-    return render_template("mentorMain.html", name=user.fullName)
+
+    interests = Interest.query.filter_by(userID=userId)
+    return render_template("mentorMain.html", name=user.fullName, interests=interests)
 
 @app.route('/findMatch')
 @login_required
