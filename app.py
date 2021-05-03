@@ -60,8 +60,11 @@ class Mentorship(db.Model):
     mentorID = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     mentor = db.relationship("User", foreign_keys=[mentorID])
     menteeID = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    # mentee = db.relationship("User", foreign_keys=[menteeID])
     mentee = db.relationship("User", foreign_keys=[menteeID])
+
+    accepted = db.Column(db.Boolean)
+    confirmed = db.Column(db.Boolean)
+    # mentee = db.relationship("User", foreign_keys=[menteeID])
 
 @app.route('/')
 def index():
@@ -288,7 +291,11 @@ def mentorMain():
 @app.route('/findMatch')
 @login_required
 def findMatch():
-    return render_template("findMath.html")
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
+    interests, mentors, bestMentor = matchAlgorithm(user)
+    # mentors = db.query(Interest, User).filter(User.id == Interest.UserID).filter(User.mentor == True).all()
+    return render_template("findMatch.html", name=user.fullName, interests=interests, mentors=mentors, bestMentor=bestMentor)
 
 @app.route('/matchResult')
 @login_required
@@ -307,3 +314,33 @@ def settings():
 def logout():
     logout_user()
     return redirect('/')
+
+# algorithms
+def matchAlgorithm(user):
+    mentorDict = {}
+    bestMentor = 0
+    menteeInterests = Interest.query.filter_by(userID=user.id)
+    Interest.query.filter_by()
+    # list of mentor IDs
+    mentors = User.query.join(Interest).filter(User.mentor == True)
+    # search through interests of the mentors and
+    # keep count of how many interests in common
+    for mentor in mentors:
+        mentorID = mentor.id
+        mentorInterests = Interest.query.filter_by(userID=mentorID)
+        common = compareInterests(menteeInterests, mentorInterests)
+        e = {mentorID: common}
+        mentorDict.update(e)
+    # print(mentorDict)
+    # return mentor with the most interests in common
+    for key in mentorDict:
+        if mentorDict[key] > bestMentor:
+            bestMentor = mentorDict[key]
+    return menteeInterests, mentors, bestMentor
+
+def compareInterests(interest1, interest2):
+    common = 0
+    for interest in interest1:
+        if interest in interest2:
+            common += 1
+    return common
