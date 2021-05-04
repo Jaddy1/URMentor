@@ -16,44 +16,53 @@
     <hr>
     <!-- MAJOR -->
 
-    <form autocomplete="off" action="/action_page.php">
-      <div class="autocomplete" style="width:300px;">
-        <input id="myInput" type="text" name="myCountry" placeholder="Major">
+    <form class="form" method="POST">
+      <div class="dropdown">
+        <label for="major">Major:</label>
+        <select id="major" name="major">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Major 1">Major 1</option>
+            <option class="dropdown-item" value="Major 2">Major 2</option>
+            <option class="dropdown-item" value="Major 3">Major 3</option>
+          </div>
+        </select>
       </div>
-      <!-- <input type="submit"> -->
+
+      <div class="dropdown">
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Year 1">Year 1</option>
+            <option class="dropdown-item" value="Year 1">Year 2</option>
+            <option class="dropdown-item" value="Year 1">Year 3</option>
+          </div>
+        </select>
+      </div>
+
+      <div class="dropdown">
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <option class="dropdown-item" value="Availability 1">Availability 1</option>
+            <option class="dropdown-item" value="Availability 1">Availability 2</option>
+            <option class="dropdown-item" value="Availability 1">Availability 3</option>
+          </div>
+        </select>
+      </div>
+
+      <input type="submit" name="submit">
     </form>
-
-
-    <!-- YEAR -->
-    <p style="font-size: 16px;">My graduate year is...</p>
-    <div class="d-flex justify-content-center">
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2021</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2022</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2023</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2024</button></div>
-    </div>
-
-    <!-- LOCATION -->
-    <p style="font-size: 16px;">I am located in...</p>
-    <div class="d-flex justify-content-center">
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">River Campus</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Eastman</button></div>
-      
-    </div>
-
-    <!-- AVAILABILTY -->
-    <p style="font-size: 16px;">My availabilty is...</p>
-    <div class="d-flex justify-content-center">
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
-      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">idk</button></div>
-    </div>
-
-    <!-- NEXT -->
-    <div class="p-2 bd-highlight"><button type="button" class="btn btn-success">Next</button></div>
-
-     <script src="/static/main.js" charset="utf-8"></script>
   </body>
 </html>
 

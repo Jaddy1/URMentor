@@ -9,51 +9,45 @@
 {% block page_content %}
   <body class="text-center">
     <h1>Create Profile</h1>
-
-    <form class="form" action="index.html" method="post">
-      <div class="dropdown">
-        <label for="major">Major:</label>
-        <select id="major" name="major">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Major 1">Major 1</option>
-            <option class="dropdown-item" value="Major 2">Major 2</option>
-            <option class="dropdown-item" value="Major 3">Major 3</option>
-          </div>
-        </select>
+    <h3>Select topics you are interested in: </h3>
+    <form class="form" method="POST">
+      <div class="form-check">
+        <input class="form-check-input" name="Topic1" type="checkbox" value="Topic1" id="Topic1">
+        <label class="form-check-label" for="Topic1">Topic 1</label>
       </div>
-
-      <div class="dropdown">
-        <label for="year">Year:</label>
-        <select id="year" name="year">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Year 1">Year 1</option>
-            <option class="dropdown-item" value="Year 1">Year 2</option>
-            <option class="dropdown-item" value="Year 1">Year 3</option>
-          </div>
-        </select>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic2" type="checkbox" value="Topic2" id="Topic2">
+        <label class="form-check-label" for="Topic2">Topic 2</label>
       </div>
-
-      <div class="dropdown">
-        <label for="location">Location:</label>
-        <select id="location" name="location">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Year 1">Year 1</option>
-            <option class="dropdown-item" value="Year 1">Year 2</option>
-            <option class="dropdown-item" value="Year 1">Year 3</option>
-          </div>
-        </select>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic3" type="checkbox" value="Topic3" id="Topic3">
+        <label class="form-check-label" for="Topic3">Topic 3</label>
       </div>
-
-      <div class="dropdown">
-        <label for="availability">Availability:</label>
-        <select id="availability" name="availability">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Availability 1">Availability 1</option>
-            <option class="dropdown-item" value="Availability 1">Availability 2</option>
-            <option class="dropdown-item" value="Availability 1">Availability 3</option>
-          </div>
-        </select>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic4" type="checkbox" value="Topic4" id="Topic4">
+        <label class="form-check-label" for="Topic4">Topic 4</label>
       </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic5" type="checkbox" value="Topic5" id="Topic5">
+        <label class="form-check-label" for="Topic5">Topic 5</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic6" type="checkbox" value="Topic6" id="Topic6">
+        <label class="form-check-label" for="Topic6">Topic 6</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic7" type="checkbox" value="Topic7" id="Topic7">
+        <label class="form-check-label" for="Topic7">Topic 7</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic8" type="checkbox" value="Topic8" id="Topic8">
+        <label class="form-check-label" for="Topic8">Topic 8</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" name="Topic9" type="checkbox" value="Topic9" id="Topic9">
+        <label class="form-check-label" for="Topic9">Topic 9</label>
+      </div>
+      <input type="submit" name="submit">
     </form>
   </body>
 </html>

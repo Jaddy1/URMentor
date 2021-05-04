@@ -13,14 +13,14 @@
   margin-right: auto;">
     <h1>Log In</h1>
 
-    <form class="form" method="">
+    <form class="form" method="POST">
 
           <div class="imgcontainer">
-              <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 150px;"></img>        
+              <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 150px;"></img>
             </div>
 
             <div class="container">
-         
+
            <input type="text" placeholder="NetID" name="inputNetID" required>
 
            <input type="password" placeholder="Password" name="psw" required>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-             
+
               <span class="psw">Don't have an account? <a href="register">Sign up today!</a></span>
                <!-- <button type="button" class="signupbtn">Signup</button> -->
             </div>
