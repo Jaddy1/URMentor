@@ -1,0 +1,69 @@
+
+
+{% extends "base.html" %}
+
+
+  {% block title %}Create Profile{% endblock %}
+
+
+  {% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+  {% endblock %}
+
+{% block page_content %}
+<body class="text-center">
+  <h1>Create Profile</h1>
+  <h3>Select topics you are interested in: </h3>
+  <form class="form" method="POST">
+    <div class="form-check">
+      <img src = "static/images/sport.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic1" type="checkbox" value="Topic1" id="Topic1">
+      <label class="form-check-label" for="Topic1">Sports</label>
+    <div class="form-check">
+      <img src = "static/images/music.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic2" type="checkbox" value="Topic2" id="Topic2">
+      <label class="form-check-label" for="Topic2">Music</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/art.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic3" type="checkbox" value="Topic3" id="Topic3">
+      <label class="form-check-label" for="Topic3">Art</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/photography.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic4" type="checkbox" value="Topic4" id="Topic4">
+      <label class="form-check-label" for="Topic4">Photography</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/research.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic6" type="checkbox" value="Topic6" id="Topic6">
+      <label class="form-check-label" for="Topic6">Research</label>
+    </div>
+      <div class="form-check">
+      <img src = "static/images/technology.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic5" type="checkbox" value="Topic5" id="Topic5">
+      <label class="form-check-label" for="Topic5">Technology</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/finance.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic7" type="checkbox" value="Topic7" id="Topic7">
+      <label class="form-check-label" for="Topic7">Finance</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/writing.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic8" type="checkbox" value="Topic8" id="Topic8">
+      <label class="form-check-label" for="Topic8">Writing</label>
+    </div>
+    <div class="form-check">
+      <img src = "static/images/networking.jpeg" height="50px" width="50px">
+      <input class="form-check-input" name="Topic9" type="checkbox" value="Topic9" id="Topic9">
+      <label class="form-check-label" for="Topic9">Networking</label>
+    </div>
+  </form>
+
+  <input type="submit" name="submit">
+</body>
+
+</html>
+{% endblock %}
