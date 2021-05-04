@@ -12,8 +12,17 @@
     <h1>Here is your Mentor Match!</h1>
     {% if mentor == None %}
       <h3>Sorry No Mentors Currently Match Your Interests</h3>
+
+      <div class="p-2 bd-highlight">
+        <a href="/menteeMain"><button id = "next" type="button" class="btn btn-warning">Back To Main</button></a>
+      </div>
     {% else %}
       <h3>Mentor: {{ mentor.fullName }}</h3>
+
+      <div class="p-2 bd-highlight">
+
+        <a href="/menteeMain"><button id = "next" type="button" class="btn btn-success">Contact!</button></a>
+      </div>
     {% endif %}
 
   </body>

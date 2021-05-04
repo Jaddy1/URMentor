@@ -34,3 +34,8 @@ section{
     margin: 10px 10px;
 }
 
+.form-check{
+    margin: 10px 10px;
+    display: inline-block;
+}
+
