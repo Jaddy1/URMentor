@@ -1,33 +1,147 @@
 {% extends "base.html" %}
 
-{% block title %}Main Page{% endblock %}
+{% block title %}Home - Mentor{% endblock %}
 
 {% block head %}
   {{ super() }}
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/choices.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainstyles.css') }}">
 {% endblock %}
 
+
 {% block page_content %}
-  <body class="text-center">
-    <h1>Greetings {{ name }}!</h1>
+
+  <body style="padding-top: 20px;">
+
     <div class="row">
-      <div class="col">
-        <h3>User Name</h3>
-        <a href="/matchResult">+ Find Your Match</a>
-        <h4></h4>
-      </div>
-      <div class="col">
-        <h2>Filler</h2>
-      </div>
-      <div class="col">
-        <h2>Filler</h2>
-        <ul>
-        {% for interest in interests %}
-          <li>{{ interest.title }}</li>
-        {% endfor %}
-        </ul>
+  <div class="column side">
+
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p> -->
+    <div class="side-container">
+      <div class="row">
+
+
+            <div class="imgcontainer col-sm-6">
+              <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 100px;"></img>
+            </div>
+
+            <div class="col-sm-6">
+
+               <p style="font-size: 24px;">{{ name }}</p>
+
+               <p>My current role:</p>
+              <div class="d-flex flex-wrap">
+
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Mentee</button></div>
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-success">Mentor</button></div>
+            </div>
+          </div>
+          </div>
+
+          <br>
+          <p>My Rate:</p>
+
+          <br>
+          <hr>
+
+          <p style="font-size: 24px;">My Network</p>
+          <br>
+
+
+              <div class="imgcontainer col-sm-6">
+                 <img src="{{ url_for('static',filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+              </div>
+
+
+              <div class=" col-sm-6">
+               <p style="font-size: 24px;">Name</p>
+
+                <div class="p-2 bd-highlight">
+                  <button type="button" class="btn btn-outline-dark">My Mentee</button>
+               </div>
+
+              </div>
+
+
+    </div>
+  </div>
+
+  <div class="column middle">
+
+    <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search Your Network" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">search</button>
+
+    </div>
+
+    <br>
+    <hr>
+
+    <h2 id = "request">New Mentorship Requsts</h2>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3"><img src="{{ url_for('static', filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img></div>
+        <div class="col-xs-6 col-sm-3">Name</div>
+        <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-success">Accept</button></div>
+        <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-outline-dark">Decline</button></div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3"><img src="{{ url_for('static', filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img></div>
+        <div class="col-xs-6 col-sm-3">Name</div>
+        <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-success">Accept</button></div>
+        <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-outline-dark">Decline</button></div>
+    </div>
+
+
+
+
+</div>
+
+
+
+  <div class="column side">
+    <h2>Help The Anonymous</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Q: How is CSC212? How many projects it has? Are they hard?</a></h4>
+        <p>#computerscience</p>
       </div>
     </div>
-    <h4>Check </h4>
+
+     <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Q: Any suggestion for the Economics cluster courses?</a></h4>
+        <p>#economics #cluster</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Q: Could someone give me some feedback on my portfolio? Thanks ahead!</a></h4>
+        <p>#digitalmediastudies #portfolio</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   </body>
 </html>

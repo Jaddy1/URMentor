@@ -1,57 +1,134 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home - Mentee{% endblock %}
 
 {% block head %}
   {{ super() }}
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/choices.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainstyles.css') }}">
 {% endblock %}
 
+
 {% block page_content %}
-  <body>
-    <h1 class="text-center">Greetings {{name}}!</h1>
-    <div class="container-fluid">
+
+  <body style="padding-top: 20px;">
+
+    <div class="row">
+  <div class="column side">
+
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p> -->
+    <div class="side-container">
       <div class="row">
 
-        <div class="col">
-          <h2>Some filler text</h2>
+
+            <div class="imgcontainer col-sm-6">
+              <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 100px;"></img>
+            </div>
+
+            <div class="col-sm-6">
+
+               <p style="font-size: 24px;">{{ name }}</p>
+
+               <p>My current role:</p>
+              <div class="d-flex flex-wrap">
+
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-success">Mentee</button></div>
+              <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Mentor</button></div>
+            </div>
+          </div>
+          </div>
+
+          <br>
+
+          <a href="/findMatch"><button type="button" class="btn btn-primary btn-lg btn-block">Find Your Match!</button></a>
+
+          <br>
+          <hr>
+
+          <p style="font-size: 24px;">My Network</p>
+          <br>
+
+
+              <div class="imgcontainer col-sm-6">
+                 <img src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+              </div>
+
+
+              <div class=" col-sm-6">
+               <p style="font-size: 24px;">Name</p>
+
+                <div class="p-2 bd-highlight">
+                  <button type="button" class="btn btn-outline-dark">My Mentor</button>
+               </div>
+
+              </div>
+
+
+    </div>
+  </div>
+
+  <div class="column middle">
+
+    <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search Your Network" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">search</button>
+
+    </div>
+
+    <br>
+
+        <div style="border: 1px solid none; padding: 10px; box-shadow: 4px 4px #d1d1d1;
+      ">
+          <h2>Create a post or ask a question</h2>
+          <input class="form-control form-control-lg" type="text" placeholder="Ask question here...">
+
         </div>
 
-        <div class="col">
-          <h3>Check new massages from your mentor!</h3>
-          <div class="card" style="width: 18rem;">
-            <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h4>Message!</h4>
-              <p class="card-text">Random message that your mentor sent. Check it out!</p>
-            </div>
-          </div>
+</div>
 
-          <div class="row">
-            <div class="col">
-              <h5>Explore your network</h5>
-              <div class="card" style="width: 10rem;">
-                <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h4>Mentor Name</h4>
-                  <button type="button" name="button">Connect!</button>
-                </div>
-              </div>
-            </div>
 
-            <div class="col">
-              <h5>Help the Anonymous</h5>
-              <div class="card" style="width: 10rem;">
-                <img src="static/images/mentor1_stock.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h4>Mentor Name</h4>
-                  <button type="button" name="button">Connect!</button>
-                </div>
-              </div>
-            </div>
-          </div>
 
+  <div class="column side">
+    <h2>Explore Your Network</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Dominique Dorvil</a></h4>
+        <p>Digital Media Studies Major</p>
       </div>
     </div>
+
+     <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Avan Turkson</a></h4>
+        <p>Digital Media Studies Major</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <br>
+      <img style="display: block;
+      margin-left: auto;
+      margin-right: auto;" src="{{ url_for('static',    filename='images/logo_image.png') }}" class="avatar" style="width: 50px;"></img>
+      <div class="container" style=" text-align: center;">
+        <h4><a style="color:#0a6dd9 ;  text-decoration: none;" href="#">Isaac Male</a></h4>
+        <p>Digital Media Studies Major</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   </body>
 </html>
 {% endblock %}

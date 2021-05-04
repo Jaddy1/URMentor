@@ -6,15 +6,26 @@
   {{ super() }}
 <!--   <script src="{{url_for('static', filename='js/main.js') }}" data-turbolinks-track="reload"></script>
  -->  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dropdown_styles.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
 
 {% endblock %}
 
 {% block page_content %}
   <body class="text-center" style="max-width: 500px; margin-left: auto;
   margin-right: auto;">
+
     <h1>Create Profile</h1>
     <hr>
     <!-- MAJOR -->
+    <section id = "major">
+      <p style="font-size: 16px;">My major is...</p>
+      <form autocomplete="on" action="#">
+        <div class="autocomplete" style="width:200px;">
+          <input id="myInput" type="text" name="myCountry" placeholder="Major">
+        </div>
+        <!-- <input type="submit"> -->
+      </form>
+    </section>
 
     <form class="form" method="POST">
       <div class="dropdown">
