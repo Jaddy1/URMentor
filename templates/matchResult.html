@@ -9,7 +9,11 @@
 {% block page_content %}
   <body class="text-center">
     <h1>Here is your Mentor Match!</h1>
-    <h3>Mentor: {{ mentor.fullName }}</h3>
+    {% if mentor == None %}
+      <h3>Sorry No Mentors Currently Match Your Interests</h3>
+    {% else %}
+      <h3>Mentor: {{ mentor.fullName }}</h3>
+    {% endif %}
 
   </body>
 </html>
