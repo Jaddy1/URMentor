@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Create Profile{% endblock %}
 
-{% block head %}
-  {{ super() }}
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/hello.css') }}">
+  {% block title %}Create Profile{% endblock %}
 
-{% endblock %}
+  {% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+  {% endblock %}
 
 {% block page_content %}
   <body class="text-center" style="max-width: 750px; margin-left: auto;
@@ -29,10 +29,6 @@
                 <p style= "color:white";
                 class="card-text">AMA Greek Life</p>
 
-
-
-              </div>
-
                <div class="form-check ">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   <label class="form-check-label" for="flexCheckDefault">
@@ -40,12 +36,6 @@
                   </label>
                 </div>
 
-            </div>
-
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <p class="card-text">Choosing Major</p>
-              </div>
 
                <div class="form-check ">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -77,7 +67,9 @@
                 </div>
             </div>
 
-        </div>
+<div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="Topic1">
+        <label class="form-check-label" for="Topic1">Dorm Life</label>
       </div>
     </div>
     <script src="{{url_for('static',filename='js/main.js')}}"></script>

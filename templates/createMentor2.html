@@ -4,50 +4,70 @@
 
 {% block head %}
   {{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dropdown_styles.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
 {% endblock %}
 
 {% block page_content %}
-  <body class="text-center">
-    <h1>Create Profile</h1>
-    <h3>Select topics you are interested in: </h3>
+<body class="text-center" style="max-width: 500px; margin-left: auto;
+margin-right: auto;">
 
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic1">
-      <label class="form-check-label" for="Topic1">Topic 1</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic2">
-      <label class="form-check-label" for="Topic2">Topic 2</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic3">
-      <label class="form-check-label" for="Topic3">Topic 3</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic4">
-      <label class="form-check-label" for="Topic4">Topic 4</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic5">
-      <label class="form-check-label" for="Topic5">Topic 5</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic6">
-      <label class="form-check-label" for="Topic6">Topic 6</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic7">
-      <label class="form-check-label" for="Topic7">Topic 7</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic8">
-      <label class="form-check-label" for="Topic8">Topic 8</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="Topic9">
-      <label class="form-check-label" for="Topic9">Topic 9</label>
-    </div>
+  <h1>Create Profile</h1>
+  <hr>
+  <!-- MAJOR -->
+  <section id = "major">
+    <p style="font-size: 16px;">My major is...</p>
+    <form autocomplete="on" action="#">
+      <div class="autocomplete" style="width:200px;">
+        <input id="myInput" type="text" name="myCountry" placeholder="Major">
+      </div>
+      <!-- <input type="submit"> -->
+    </form>
+  </section>
 
-  </body>
+
+
+  <!-- YEAR -->
+  <section id = "year">
+    <p style="font-size: 16px;">My graduate year is...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2021</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2022</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2023</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">2024</button></div>
+    </div>
+  </section>
+
+
+
+  <!-- LOCATION -->
+  <section id = "location">
+    <p style="font-size: 16px;">I am located in...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">River Campus</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Eastman</button></div>
+    </div>
+  </section>
+
+
+  <!-- AVAILABILTY -->
+  <section id = "availabilty">
+    <p style="font-size: 16px;">My availabilty is...</p>
+    <div class="d-flex justify-content-center">
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Very Flexible</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Quite Available</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Quite Busy</button></div>
+      <div class="p-2 bd-highlight"><button type="button" class="btn btn-outline-dark">Very Busy</button></div>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <div class="p-2 bd-highlight">
+
+    <a href="/createMentor3"><button id = "next" type="button" class="btn btn-success">Next</button></a>
+  </div>
+
+   <script src="/static/js/main.js" charset="utf-8"></script>
+</body>
 </html>
 {% endblock %}

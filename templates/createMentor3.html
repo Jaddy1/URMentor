@@ -1,60 +1,52 @@
+
+
 {% extends "base.html" %}
 
-{% block title %}Create Profile{% endblock %}
 
-{% block head %}
-  {{ super() }}
-{% endblock %}
+  {% block title %}Create Profile{% endblock %}
 
-{% block page_content %}
-  <body class="text-center">
-    <h1>Create Profile</h1>
 
-    <form class="form" action="index.html" method="post">
-      <div class="dropdown">
-        <label for="major">Major:</label>
-        <select id="major" name="major">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Major 1">Major 1</option>
-            <option class="dropdown-item" value="Major 2">Major 2</option>
-            <option class="dropdown-item" value="Major 3">Major 3</option>
-          </div>
-        </select>
+  {% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+  {% endblock %}
+
+
+  {% block page_content %}
+    <body class="text-center">
+      <h1>Create Profile</h1>
+      <hr>
+      <h3>Select topics you are interested in: </h3>
+
+    <section id = "interest">
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-
-      <div class="dropdown">
-        <label for="year">Year:</label>
-        <select id="year" name="year">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Year 1">Year 1</option>
-            <option class="dropdown-item" value="Year 1">Year 2</option>
-            <option class="dropdown-item" value="Year 1">Year 3</option>
-          </div>
-        </select>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-
-      <div class="dropdown">
-        <label for="location">Location:</label>
-        <select id="location" name="location">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Year 1">Year 1</option>
-            <option class="dropdown-item" value="Year 1">Year 2</option>
-            <option class="dropdown-item" value="Year 1">Year 3</option>
-          </div>
-        </select>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-
-      <div class="dropdown">
-        <label for="availability">Availability:</label>
-        <select id="availability" name="availability">
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <option class="dropdown-item" value="Availability 1">Availability 1</option>
-            <option class="dropdown-item" value="Availability 1">Availability 2</option>
-            <option class="dropdown-item" value="Availability 1">Availability 3</option>
-          </div>
-        </select>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
+        <div class="col-xs-6 col-sm-4"><button type="button" class="btn btn-info">Info</button></div>
       </div>
-    </form>
-  </body>
-</html>
-{% endblock %}
+    </section>
+
+    <div class="p-2 bd-highlight">
+      <a href="/mentorMain"><button id = "next" type="button" class="btn btn-success">Complete!</button></a>
+    </div>
+      
+
+
+    </body>
+  </html>
+  {% endblock %}
