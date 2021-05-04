@@ -331,16 +331,20 @@ def matchAlgorithm(user):
         common = compareInterests(menteeInterests, mentorInterests)
         e = {mentorID: common}
         mentorDict.update(e)
-    # print(mentorDict)
+    print(mentorDict)
     # return mentor with the most interests in common
     for key in mentorDict:
         if mentorDict[key] > bestMentor:
-            bestMentor = mentorDict[key]
+            # print(mentorDict[key])
+            bestMentor = key
     return menteeInterests, mentors, bestMentor
 
 def compareInterests(interest1, interest2):
     common = 0
     for interest in interest1:
-        if interest in interest2:
-            common += 1
+        # print(interest.title + " /")
+        # print(interest2)
+        for interests in interest2:
+            if interest.title == interests.title:
+                common += 1
     return common
