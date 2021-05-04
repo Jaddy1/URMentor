@@ -291,16 +291,16 @@ def mentorMain():
 @app.route('/findMatch')
 @login_required
 def findMatch():
-    userId = current_user.id
-    user = User.query.filter_by(id=userId).first()
-    interests, mentors, bestMentor = matchAlgorithm(user)
-    # mentors = db.query(Interest, User).filter(User.id == Interest.UserID).filter(User.mentor == True).all()
-    return render_template("findMatch.html", name=user.fullName, interests=interests, mentors=mentors, bestMentor=bestMentor)
+    return render_template("findMatch.html")
 
 @app.route('/matchResult')
 @login_required
 def matchResult():
-    return render_template("matchResult.html")
+    userId = current_user.id
+    user = User.query.filter_by(id=userId).first()
+    bestMentor = matchAlgorithm(user)
+    mentor = User.query.filter_by(id=bestMentor).first()
+    return render_template("matchResult.html", name=user.fullName, mentor=mentor)
 
 @app.route('/settings')
 @login_required
@@ -331,13 +331,13 @@ def matchAlgorithm(user):
         common = compareInterests(menteeInterests, mentorInterests)
         e = {mentorID: common}
         mentorDict.update(e)
-    print(mentorDict)
+    # print(mentorDict)
     # return mentor with the most interests in common
     for key in mentorDict:
         if mentorDict[key] > bestMentor:
             # print(mentorDict[key])
             bestMentor = key
-    return menteeInterests, mentors, bestMentor
+    return bestMentor
 
 def compareInterests(interest1, interest2):
     common = 0
