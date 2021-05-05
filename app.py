@@ -138,10 +138,12 @@ def createMentee1():
         major = request.form.get('major')
         year = request.form.get('year')
         location = request.form.get('location')
+        availability = request.form.get('availability')
         try:
             user.major = major
             user.year = year
             user.location = location
+            user.availability = availability
             db.session.commit()
             return redirect('/createMentee2')
         except:
@@ -216,10 +218,12 @@ def createMentor2():
         major = request.form.get('major')
         year = request.form.get('year')
         location = request.form.get('location')
+        availability = request.form.get('availability')
         try:
             user.major = major
             user.year = year
             user.location = location
+            user.availability = availability
             db.session.commit()
             return redirect('/createMentor3')
         except:
@@ -314,6 +318,153 @@ def settings():
 def logout():
     logout_user()
     return redirect('/')
+
+@app.route('/editMentee1', methods=['GET', 'POST'])
+@login_required
+def editMentee1():
+    if request.method == 'POST':
+        userId = current_user.id
+        user = User.query.filter_by(id=userId).first()
+        major = request.form.get('major')
+        year = request.form.get('year')
+        location = request.form.get('location')
+        availability = request.form.get('availability')
+        try:
+            user.major = major
+            user.year = year
+            user.location = location
+            user.availability = availability
+            db.session.commit()
+            return redirect('/editMentee2')
+        except:
+            return "error adding user to db"
+    else:
+        return render_template("editMentee1.html")
+
+@app.route('/editMentee2', methods=['GET', 'POST'])
+@login_required
+def editMentee2():
+    if request.method == "POST":
+        userId = current_user.id
+        if request.form.get("Topic1"):
+            new_interest = Interest(title=request.form.get("Topic1"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic2"):
+            new_interest = Interest(title=request.form.get("Topic2"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic3"):
+            new_interest = Interest(title=request.form.get("Topic3"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic4"):
+            new_interest = Interest(title=request.form.get("Topic4"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic5"):
+            new_interest = Interest(title=request.form.get("Topic5"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic6"):
+            new_interest = Interest(title=request.form.get("Topic6"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic7"):
+            new_interest = Interest(title=request.form.get("Topic7"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic8"):
+            new_interest = Interest(title=request.form.get("Topic8"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic9"):
+            new_interest = Interest(title=request.form.get("Topic9"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        return redirect('/menteeMain')
+    else:
+        return render_template("editMentee2.html")
+
+@app.route('/editMentor1', methods=['GET', 'POST'])
+@login_required
+def editMentor1():
+    if request.method == 'POST':
+        education = request.form.get('education')
+        semester = request.form.get('inlineRadioOptions')
+        if semester == 'true':
+            return redirect('/editMentor2')
+        else:
+            return 'Sorry you are not eligible to be a mentor'
+    else:
+        return render_template("editMentor1.html")
+
+@app.route('/editMentor2', methods=['GET', 'POST'])
+@login_required
+def editMentor2():
+    if request.method == 'POST':
+        userId = current_user.id
+        user = User.query.filter_by(id=userId).first()
+        major = request.form.get('major')
+        year = request.form.get('year')
+        location = request.form.get('location')
+        availability = request.form.get('availability')
+        try:
+            user.major = major
+            user.year = year
+            user.location = location
+            user.availability = availability
+            db.session.commit()
+            return redirect('/editMentor3')
+        except:
+            return "error adding user to db"
+    else:
+        return render_template("editMentor2.html")
+
+@app.route('/editMentor3', methods=['GET', 'POST'])
+@login_required
+def editMentor3():
+    if request.method == "POST":
+        userId = current_user.id
+        if request.form.get("Topic1"):
+            new_interest = Interest(title=request.form.get("Topic1"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic2"):
+            new_interest = Interest(title=request.form.get("Topic2"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic3"):
+            new_interest = Interest(title=request.form.get("Topic3"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic4"):
+            new_interest = Interest(title=request.form.get("Topic4"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic5"):
+            new_interest = Interest(title=request.form.get("Topic5"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic6"):
+            new_interest = Interest(title=request.form.get("Topic6"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic7"):
+            new_interest = Interest(title=request.form.get("Topic7"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic8"):
+            new_interest = Interest(title=request.form.get("Topic8"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        if request.form.get("Topic9"):
+            new_interest = Interest(title=request.form.get("Topic9"), userID=userId)
+            db.session.add(new_interest)
+            db.session.commit()
+        return redirect('/mentorMain')
+    else:
+        return render_template("editMentor3.html")
 
 # algorithms
 def matchAlgorithm(user):
