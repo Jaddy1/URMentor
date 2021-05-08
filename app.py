@@ -13,7 +13,7 @@ application = app
 # database_file = "sqlite:///{}".format(os.path.join(project_dir, "ontheWall.db"))
 
 app.config['SECRET_KEY'] = 'hard to guess string'
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///urmentor.db'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
 
